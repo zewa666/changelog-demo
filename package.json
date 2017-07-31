@@ -5,28 +5,48 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "start": "node index.js",
+    "commitmsg": "validate-commit-msg",
+    "cmt": "git-cz"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "commitizen": "^2.9.6",
+    "cz-conventional-changelog": "^2.0.0",
+    "husky": "^0.14.3",
     "validate-commit-msg": "^2.14.0"
   },
   "config": {
-    "types": ["feat", "fix", "docs", "style", "refactor", "perf", "test", "build", "ci", "chore", "revert"],
-    "scope": {
-      "required": true,
-      "allowed": [
-        "*"
+    "validate-commit-msg": {
+      "types": [
+        "feat",
+        "fix",
+        "docs",
+        "style",
+        "refactor",
+        "perf",
+        "test",
+        "chore",
+        "revert"
       ],
-      "validate": false,
-      "multiple": false
+      "scope": {
+        "required": true,
+        "allowed": [
+          "*"
+        ],
+        "validate": true,
+        "multiple": false
+      },
+      "warnOnFail": false,
+      "maxSubjectLength": 100,
+      "subjectPattern": ".+",
+      "subjectPatternErrorMsg": "subject does not match subject pattern!",
+      "helpMessage": "Navigate to https://conventionalcommits.org/ for details",
+      "autoFix": false
     },
-    "warnOnFail": false,
-    "maxSubjectLength": 100,
-    "subjectPattern": ".+",
-    "subjectPatternErrorMsg": "subject does not match subject pattern!",
-    "helpMessage": "",
-    "autoFix": false
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
