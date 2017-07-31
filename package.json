@@ -1,0 +1,32 @@
+{
+  "name": "conv-log",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "validate-commit-msg": "^2.14.0"
+  },
+  "config": {
+    "types": ["feat", "fix", "docs", "style", "refactor", "perf", "test", "build", "ci", "chore", "revert"],
+    "scope": {
+      "required": true,
+      "allowed": [
+        "*"
+      ],
+      "validate": false,
+      "multiple": false
+    },
+    "warnOnFail": false,
+    "maxSubjectLength": 100,
+    "subjectPattern": ".+",
+    "subjectPatternErrorMsg": "subject does not match subject pattern!",
+    "helpMessage": "",
+    "autoFix": false
+  }
+}
